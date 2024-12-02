@@ -52,4 +52,16 @@ class StringCalculatorTest : FunSpec({
 			}
 		}
 	}
+
+	context("복합 연산") {
+		test("여러 개의 연산을 순서대로 처리한다") {
+			forAll(
+				row("2 + 3 * 4 / 2", 10),
+				row("1 + 2 + 3", 6),
+				row("10 - 2 * 3", 24)
+			) { expression, expected ->
+				calculator.calculate(expression) shouldBe expected
+			}
+		}
+	}
 })

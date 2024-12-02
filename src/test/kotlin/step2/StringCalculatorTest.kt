@@ -24,5 +24,4 @@ class StringCalculatorTest : FunSpec({
 			calculator.calculate("8 / 2") shouldBe 4
 		}
 	}
-
 })
